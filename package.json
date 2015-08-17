@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.4",
-  "description": "A sample Node.js app using Express 4",
+  "name": "paired-server",
+  "version": "0.0.1",
+  "description": "Web backend to Paired",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -15,12 +15,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "git@heroku.com:paired-server.git"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+  "license": "MIT",
+  "author": "Cameron Ehrlich"
 }
