@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="pairedApp">
+<head>
+  <% include partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include partials/nav.ejs %>
+
+  <div class="jumbotron text-center">
+    <h1>Paired Admin</h1>
+  </div>
+
+  <div ng-controller="UsersController" class="well">
+    <h1>Users</h1>
+    <br>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="nameField">Name</label>
+        <input ng-model="name" type="text" class="form-control" id="nameField" placeholder="Product Name">
+      </div>
+      <div class="form-group">
+        <label for="descriptionField">Description</label>
+        <input ng-model="description" type="text" class="form-control" id="descriptionField" placeholder="This product is...">
+      </div>
+      <button ng-click="addProduct(name, description)" ng-submit="addProduct(name, description)" class="btn btn-default">Create</button>
+    </form>
+
+    <h3>Create Product</h3>
+    <div class="well">
+      Name : {{name}} 
+      <br>
+      Description : {{description}}
+    </div>
+    
+    <hr>  
+    
+    <h3>Current Products</h3>
+
+    <table class="table table-striped">
+      <th>Name</th>
+      <th>Description</th>
+      <tr ng-repeat="product in products">
+        <td>{{ product.get('name') }}</td>
+        <td>{{ product.get('description') }}</td>
+        <td><button ng-click="deleteProduct(product)" class="btn btn-secondary">Delete</button></td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
